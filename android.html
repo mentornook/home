@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Nook</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<style> 
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        width: 100%;
+        background-color: #000030;
+        color: white;
+    }
+
+    .navbar {
+        background: transparent;
+    }
+
+   /* Smaller Hero Section */
+   .hero {
+            background: url('hero.PNG') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+
+/* Floating Arrow */
+.scroll-down {
+    position: absolute;
+    bottom: 15%; /* Position at the bottom of the header */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px; /* Adjust size */
+    text-decoration: none;
+    color: white; /* Change color as needed */
+    animation: bounce 1.5s infinite;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+	 .img-fluid
+	 {
+		width:400px;
+	 }
+
+
+	
+/* .benefit-item h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+*/
+//.benefit-item:nth-child(1) h1 { color: #ff5733; } /* Red */
+//.benefit-item:nth-child(2) h1 { color: #007bff; } /* Blue */
+//.benefit-item:nth-child(3) h1 { color: #28a745; } /* Green */
+//.benefit-item:nth-child(4) h1 { color: #6610f2; } /* Purple */
+//.benefit-item:nth-child(5) h1 { color: #ff9900; } /* Orange */
+//.benefit-item:nth-child(6) h1 { color: #dc3545; } /* Red */
+
+    .welcome-section,
+.joinbenifit-section,	
+    .learning-section, 
+     .offer-section {
+        background-color: #000030;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .welcome-section h2,
+.joinbenifit-section h2,	
+    .offer-section h2, 
+    .learning-section h2, 
+    .join-tutors-section h2 {
+        color: orange;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    .features-section, 
+    .learning-modes, 
+    .offer-modes, 
+    .join-benefits {
+        background-color: white;
+        color: black;
+        padding: 40px 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .feature-box, .benefit-item {
+        padding: 20px;
+    }
+
+    .feature-box img{
+        max-width: 100%;
+        height: auto;
+    }
+
+.emoji {
+    font-size: 4rem; /* Bigger emojis */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    display: block;
+}
+
+.benefit-item {
+    padding: 20px;
+}
+
+.benefit-item h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.benefit-item p {
+    font-size: 1rem;
+    color: #444;
+}
+
+
+
+    .benefit-box {
+        background-color: #f9d776;
+        padding: 20px;
+        border-radius: 10px;
+    }
+	
+	    .benefit-box p{
+       color:black;
+    }
+
+    .join-tutors-section {
+        background-color: #f9d776;
+        text-align: center;
+        padding: 40px 20px;
+        color: black;
+    }
+
+   
+    /* Justified Text */
+    .justified-text {
+        text-align: justify;
+        line-height: 1.6;
+        text-indent: 20px;
+        word-spacing: 2px;
+        letter-spacing: 0.5px;
+    }
+	
+	@media screen and (max-width: 768px) {
+	  body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 100%;
+        }
+
+		
+}
+.learning-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Ensure images are properly sized and aligned */
+.learning-box img {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .learning-box {
+        width: 50%; /* Ensures two items per row */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .learning-box {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .learning-box img {
+        width: 80px; /* Reduce size for better fit */
+    }
+}
+/* Ensure the table fits within the screen */
+.offer-modes table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures columns don't exceed screen width */
+}
+
+/* Style for table data cells */
+.offer-modes td p{
+    vertical-align: middle;
+    padding: 15px;
+    word-wrap: break-word;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+/* Make sure images inside <td> are responsive */
+.offer-modes td img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments for mobile screens */
+@media screen and (max-width: 768px) {
+    .offer-modes table {
+        display: block;
+        width: 100%;
+    }
+
+    .offer-modes tr {
+        display: block;
+        width: 100%;
+    }
+
+    .offer-modes td {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .offer-modes td:first-child {
+        text-align: center;
+    }
+
+    .offer-modes td:last-child {
+        text-align: left;
+        font-size: 14px; /* Adjust text size */
+        padding: 10px; /* Adjust padding */
+    }
+}
+.benefits-section {
+    text-align: center;
+    padding: 40px 20px;
+	background-color: #fbe6a2;
+}
+
+.benefits-section h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+	color: #000030;
+}
+
+
+
+/* Ensure equal spacing */
+.benefit-box h5 {
+    font-size: 1.2rem;
+    color: blue;
+}
+
+/* Adjustments for responsiveness */
+@media screen and (max-width: 768px) {
+    .benefit-box {
+        width: 45%; /* Two items per row */
+        margin: 10px;
+    }
+	    .benefit-box p{
+       color:black;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .benefit-box {
+        width: 100%; /* One item per row on smaller screens */
+        margin-bottom: 15px;
+    }
+	    .benefit-box p{
+       color:black;
+    }
+}
+
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Mentor Nook Logo" height="40">
+                Mentor Nook
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="downloadapp.html">Download App</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="hero">
+        <img src="front.PNG" alt="Mentor Nook Banner" class="img-fluid">
+		 <a href="#content-below" class="scroll-down">🔽</a>
+    </header>
+
+<div id="content-below">
+    <section class="welcome-section">
+        <h2>Welcome To MENTOR NOOK</h2>
+        <p><em>"We are a global online platform connecting passionate students and expert tutors from every corner of the world!"</em></p>
+    </section>
+
+ <section class="features-section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4 feature-box">
+                <h1 class="emoji" style="color: #ff5733;">🚀</h1>
+                <h4 style="color: blue;"><strong>MN-Service</strong></h4>
+                <p>We provide online tuition service for K(1-12), NEET, IIT-JEE, SSC, IB & Any Exam.</p>
+            </div>
+            <div class="col-md-4 feature-box">
+                <h1 class="emoji" style="color: #28a745;">♏</h1>
+                <h4 style="color: blue;"><strong>MN-Zone</strong></h4>
+                <p>The tuition service is for Every Subject & Every Student in Every Country.</p>
+            </div>
+            <div class="col-md-4 feature-box">
+                <h1 class="emoji" style="color: #f39c12;">🎯</h1>
+                <h4 style="color: blue;"><strong>MN-Goal</strong></h4>
+                <p>Our mission is to create a learning environment that is accessible for students worldwide.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+	<section class="offer-section">
+        <h2>What We Offer ?</h2>
+	</section>
+	<section class="offer-modes">
+      <table>
+	  <tr>
+	  <td><img src="offer-pic.png"></img></td>
+	  <td><p class="justified-text">We offer personalized online tuition tailored to meet the unique learning needs of every student. Our experienced and qualified tutors deliver interactive lessons in a variety of subjects, ensuring students grasp concepts effectively. 
+We provide flexible scheduling, live one-on-one sessions, and a student-friendly platform for seamless learning. we’re here to support every step of your academic journey. Experience learning that’s engaging, convenient, and result-oriented—right from the comfort of your home. 
+</p></td>
+	  </tr>
+	  </table>
+	</section>
+<section class="learning-section">
+        <h2>Our Subscription Plans</h2>
+        <p><em>"Choose a plan that suits your learning needs. Designed specifically for your growth!"</em></p>
+    </section>
+    <section class="learning-modes">
+        <div class="container text-center" style="width:100%;">
+            <div class="row text-center" style="width:100%;">
+                <div class="col-md-6 col-lg-3 learning-box">
+                    <img src="single-topic.png" alt="Single Topic">
+                    <h4><strong>A Single Topic</strong></h4>
+                    <p>1 Hr. (A single day)<br><em>Ideal for focused learning on a single topic</em></p>
+                </div>
+                <div class="col-md-6 col-lg-3 learning-box">
+                    <img src="chapter-wise.png" alt="Chapter Wise">
+                    <h4><strong>Chapter Wise</strong></h4>
+                    <p>Min 4 Hrs., Max 12 Hrs.<br><em>Comprehensive chapter-wise coverage for in-depth understanding.</em></p>
+                </div>
+                <div class="col-md-6 col-lg-3 learning-box">
+                    <img src="course-wise.png" alt="Course Wise">
+                    <h4><strong>Course Wise</strong></h4>
+                    <p>Min 4 Months, Max 12 Months<br><em>Perfect for mastering an entire course with structured guidance.</em></p>
+                </div>
+                <div class="col-md-6 col-lg-3 learning-box">
+                    <img src="specific-problem.png" alt="Specific Problem">
+                    <h4><strong>Specific Problem</strong></h4>
+                    <p>1 Hr./Class<br><em>Tackle problems from coaching materials or books.</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+      <section class="benefits-section">
+        <h3>The highest benefit to join us</h3>
+        <hr>
+        <div class="container text-center" style="width:100%;">
+            <div class="row text-center justify-content-center" style="width:100%;">
+                <div class="col-md-2 benefit-box" style="margin-right:10px;">
+                    <h5><em>Age</em></h5>
+                    <p>Any candidate above 18+ can join us as a teacher and start earning.</p>
+                </div>
+                <div class="col-md-2 benefit-box" style="margin-right:10px;">
+                    <h5><em>Experience & Fee</em></h5>
+                    <p>No experience needed. No fees, Free to join.</p>
+                </div>
+                <div class="col-md-2 benefit-box" style="margin-right:10px;">
+                    <h5><em>Training</em></h5>
+                    <p>We will provide training to you free of cost.</p>
+                </div>
+                <div class="col-md-2 benefit-box">
+                    <h5><em>No Burden</em></h5>
+                    <p>No boundation of time and qualification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+	  <section class="joinbenifit-section">
+	     <h3>JOIN AS TUTOR</h3>
+	  </section>
+		 <section class="join-tutors-section">
+        <h3>Become a part of <em>Mentor Nook</em> and take your teaching career to the next level!</h3>
+        <p><strong>why you should join us</strong></p>
+		</section>
+	<section class="join-benefits">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4 benefit-item">
+                <h1><i class="fas fa-calendar-alt" style="color:#ff5733;"></i></h1>
+                <h5>Flexible Schedule</h5>
+                <p>Teach at your convenience and balance work with personal commitments.</p>
+            </div>
+            <div class="col-md-4 benefit-item">
+                <h1><i class="fas fa-globe" style="color:#007bff;"></i></h1>
+                <h5>Global Reach</h5>
+                <p>Connect with students from diverse backgrounds and expand your teaching horizon.</p>
+            </div>
+            <div class="col-md-4 benefit-item">
+                <h1><i class="fas fa-money-bill-wave" style="color:#28a745;"></i></h1>
+                <h5>Earnings</h5>
+                <p>Earn a steady income with transparent and timely payments.</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4 benefit-item">
+                <h1><i class="fas fa-laptop" style="color:#6610f2;"></i></h1>
+                <h5>Seamless Platform</h5>
+                <p>Enjoy a user-friendly interface designed for smooth and interactive online teaching.</p>
+            </div>
+            <div class="col-md-4 benefit-item">
+                <h1><i class="fas fa-phone" style="color:#ff9900;"></i></h1>
+                <h5>Supportive Community</h5>
+                <p>Access teaching resources, training sessions, and 24/7 support to enhance your skills.</p>
+            </div>
+            <div class="col-md-4 benefit-item">
+                <h1><i class="fas fa-pen" style="color:#dc3545;"></i></h1>
+                <h5>Impactful Teaching</h5>
+                <p>Help students achieve their goals while doing what you love.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+	<section class="joinbenifit-section">
+	     <h3>JOIN AS STUDENT</h3>
+	  </section>
+	
+<section class="join-benefits">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4 benefit-item">
+                <h1 class="emoji" style="color: #ff5733;">📆</h1>
+                <h5>Flexible Schedule</h5>
+                <p>Study at your convenience and balance your classes easily.</p>
+            </div>
+            <div class="col-md-4 benefit-item">
+                <h1 class="emoji" style="color: #28a745;">♾️</h1>
+                <h5>Global Tutors</h5>
+                <p>Finding the best teacher is easy with global availability.</p>
+            </div>
+            <div class="col-md-4 benefit-item">
+                <h1 class="emoji" style="color: #f39c12;">💰</h1>
+                <h5>Earn While Learning</h5>
+                <p>Students can earn by joining our referral program.</p>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col-md-4 benefit-item">
+                <h1 class="emoji" style="color: #8e44ad;">📚</h1>
+                <h5>Study Material</h5>
+                <p>Classes include study notes, lecture recordings, and more.</p>
+            </div>
+            <div class="col-md-4 benefit-item">
+                <h1 class="emoji" style="color: #17a2b8;">👨‍💻</h1>
+                <h5>1-to-1 Classes</h5>
+                <p>Personalized online sessions for doubt-solving without distractions.</p>
+            </div>
+            <div class="col-md-4 benefit-item">
+                <h1 class="emoji" style="color: #e83e8c;">🙏</h1>
+                <h5>Yoga & Meditation</h5>
+                <p>Join our free Dhyan Yoga sessions based on Shiv Yog Sutra.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+	<section id="faq" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        
+        <div class="accordion" id="faqAccordion">
+            <!-- Question 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Is there any fee to join as a tutor or student?
+
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                  No, Sign Up or Registration is completely free.
+
+              </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						 What happen if any dispute happen during class?
+						
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+						If a class is disrupted due to a technical error or any other dispute, the refund will be calculated based on the time the class was successfully conducted. The fee distribution follows this structure:
+
+- The total fee paid by the student is divided based on the actual class duration.
+- The company deducts 15% from the tutor’s earnings as a platform service fee.
+- The company deducts 5% from the student’s refund as a service charge.
+
+Example Calculation:
+- Total Fee Paid by Student: 100 bucks
+- Class Duration: 1 hour (60 minutes)
+- Actual Class Time Held: 40 minutes
+- Time Ratio: 40/60 = 2/3
+- Proportional Tutor Earnings: (2/3) × 100 = 67 bucks
+- Company’s 15% Fee from Tutor: 67 × 15% = 10.05 bucks
+- Company’s 5% Fee from Student: (100 - 67) × 5% = 1.65 bucks
+
+ Final Distribution
+- Tutor Receives: 67 - 10.05 = 56.95 bucks
+- Student Refund: (100 - 67) - 1.65 = 31.35 bucks
+- Company Earns: 10.05 (Tutor Fee) + 1.65 (Student Service Charge) = 11.7 bucks
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                       
+						If class is not done as per schedule then what ?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        if student done payment to tutor and tutor cancle class he/she will get refund fee with 10% deduction.
+           </div>
+                </div>
+            </div>
+			  <!-- Question 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                       
+						Is there fix amount of fee for each class?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                       Each class depend on tutor , so each class may differ the amount of fee.
+ </div>
+                </div>
+            </div>
+			
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-white text-center py-3" style="background-color:#000030">
+      <!-- Footer -->
+   
+        <p>&copy; 2025 Mentor Nook (A Coaching Partner with Kshreekar Educational Groups). All Rights Reserved.</p>
+        <a href="privacy.html" target="_blank" class="text-white">Privacy Policy</a> | 
+        <a href="terms.html" target="_blank" class="text-white">Terms & Conditions</a> | 
+		<a href="refund.html" target="_blank" class="text-white">Refund & Cancellation Policy</a>  
+
+		    <p class="mt-2">For Any Query <strong>Email: </strong><a href="mailto:nookmentor@gmail.com"> nookmentor@gmail.com</a></p>
+  
+
+</footer>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
