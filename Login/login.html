@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Nook | Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+        }
+        .navbar {
+            background-color: #000030;
+            flex-shrink: 0;
+        }
+        .iframe-container {
+            flex-grow: 1; /* Makes the iframe take the remaining space */
+            display: flex;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+		   .dropdown-menu .dropdown-item:hover {
+        background-color: #000030 !important; /* Dark blue background */
+        color: white !important; /* White text */
+    }
+    
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Mentor Nook Logo" height="40">
+                Mentor Nook
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+									<li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+					   <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="signupDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sign Up
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="signupDropdown">
+            <li><a class="dropdown-item" href="tutor-signup.html">Tutor</a></li>
+            <li><a class="dropdown-item" href="student-signup.html">Student</a></li>
+        </ul>
+    </li>
+                    <li class="nav-item"><a class="nav-link active" href="downloadapp.html">Download App</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- iFrame Container -->
+    <div class="iframe-container">
+        <iframe src="https://script.google.com/macros/s/AKfycbyamtVjMUHGevlrqNaQpiRRJVLRjlZjpZNXrYNKa9oOsbWOFbichcsElC6pjeykEP4r/exec" allowfullscreen></iframe>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
