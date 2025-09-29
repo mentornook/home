@@ -44,11 +44,11 @@
             let redirectPage = "";
 
             if (/android/i.test(userAgent)) {
-                redirectPage = "./app/"; // Change to your Android page
+                redirectPage = "/app/"; // Change to your Android page
             } else if (/iphone|ipad|ipod/i.test(userAgent)) {
-                redirectPage = "./ios/"; // Change to your iOS page
+                redirectPage = "/ios/"; // Change to your iOS page
             } else {
-                redirectPage = "./desktop/"; // Change to your Desktop page
+                redirectPage = "/desktop/"; // Change to your Desktop page
             }
 
             // Redirect after a short delay to show the loader
@@ -61,5 +61,6 @@
     </script>
 </body>
 </html>
+
 
 
